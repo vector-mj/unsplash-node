@@ -1,0 +1,331 @@
+html,
+body,
+*::after,
+*,
+*::before {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+.slick-slide {
+    outline: none;
+}
+html {
+    font-size: 10px;
+}
+body {
+    width: 100%;
+    height: 100%;
+    background-color: #0f2222;
+    color: white;
+    font-family: sans-serif;
+}
+header {
+    position: sticky;
+    display: flex;
+    top: 0;
+    z-index: 1000;
+    flex-direction: column;
+    width: 100%;
+}
+header .top {
+    display: flex;
+    flex-direction: row;
+    background-color: white;
+    padding: 0rem;
+    width: 100%;
+    align-items: center;
+    height: 6rem;
+}
+header .top .logo {
+    display: flex;
+    margin: 0 2rem;
+    width: auto;
+    height: auto;
+}
+header .top .logo h1,
+header .top .logo h3 {
+    color: black;
+    font-weight: 100;
+    margin-left: 1.5rem;
+}
+header .top .logo h1 {
+    font-size: 16px;
+    font-weight: bold;
+}
+header .top .search-bar {
+    display: flex;
+    flex: 1;
+    width: 400px;
+    height: 40px;
+}
+header .top .search-bar input {
+    margin-right: 2rem;
+    border-radius: 20px;
+    background-color: #e4e4e4;
+    font-size: 15px;
+    padding: 0 2rem;
+    border: none;
+    outline: none;
+    width: 100%;
+    height: 100%;
+}
+header .top .search-bar input:hover {
+    border: 1px solid #bebebe;
+}
+header .top .right-menu {
+    display: flex;
+    color: gray;
+    width: 62rem;
+    transition: 0.5s;
+    font-size: 14px;
+    align-items: center;
+    height: 40px;
+}
+header .top .right-menu a {
+    text-decoration: none;
+    color: gray;
+}
+header .top .right-menu .brands,
+header .top .right-menu .Explore,
+header .top .right-menu .etc,
+header .top .right-menu .login,
+header .top .right-menu .join,
+header .top .right-menu .submit,
+header .top .right-menu .line {
+    margin: 0 1.7rem;
+}
+header .top .right-menu .brands:hover,
+header .top .right-menu .Explore:hover,
+header .top .right-menu .etc:hover,
+header .top .right-menu .login:hover,
+header .top .right-menu .join:hover,
+header .top .right-menu .submit:hover,
+header .top .right-menu .line:hover {
+    color: black;
+}
+header .top .right-menu .etc {
+    font-size: 18px;
+}
+header .top .right-menu .line {
+    height: 30px;
+    border-right: 1px solid #bebebe;
+}
+header .top .right-menu .submit {
+    border: 1px solid #bebebe;
+    padding: 0.8rem 1.5rem;
+    border-radius: 5px;
+}
+header .top .right-menu .join {
+    color: white;
+    border-radius: 5px;
+    background-color: #4fa04f;
+    padding: 0.8rem 1rem;
+}
+header .down {
+    display: flex;
+    align-items: center;
+    background-color: white;
+    height: 6rem;
+    padding: 0rem 3rem;
+}
+header .down .line {
+    height: 30px;
+    border-right: 1px solid #bebebe;
+    margin: 0 3rem;
+}
+header .down .Editorial {
+    color: gray;
+    text-decoration: none;
+    font-size: 17px;
+}
+header .down .Editorial:hover {
+    color: black;
+}
+header .down .slider {
+    display: flex;
+    flex: 1;
+    align-items: center;
+    padding-top: 1rem;
+    width: 10%;
+    height: 100%;
+}
+header .down .slider li {
+    height: 2rem;
+    color: #bebebe;
+    padding: 0 1rem;
+    outline: none;
+}
+header .down .slider li a {
+    font-size: 14px;
+    outline: none;
+    color: gray;
+    text-decoration: none;
+}
+header .down .slider li a:hover {
+    color: black;
+}
+.wallpaper {
+    max-height: 60rem;
+    width: 100%;
+    max-height: 60rem;
+    overflow: hidden;
+}
+.wallpaper img {
+    width: 100%;
+    height: auto;
+    position: relative;
+}
+.wallpaper .title {
+    position: absolute;
+    top: 26rem;
+    left: 50rem;
+    flex: 1;
+    color: white;
+    padding: 1rem;
+    width: fit-content;
+}
+.wallpaper .title h1 {
+    margin-bottom: 2rem;
+    font-size: 50px;
+    font-weight: bold;
+}
+.wallpaper .title h3 {
+    font-size: 18px;
+    margin: 1rem 0;
+    font-weight: 100;
+}
+.wallpaper .title .form-search {
+    margin-right: 2rem;
+    display: flex;
+    max-width: 100rem;
+    width: 80rem;
+    border-radius: 5px;
+    height: 5rem;
+    background-color: white;
+}
+.wallpaper .title .form-search button {
+    padding: 1rem;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    background-color: white;
+}
+.wallpaper .title .form-search input {
+    flex: 1;
+    border-radius: 5px;
+    width: 100px;
+    margin-right: 2rem;
+    outline: none;
+    border: none;
+}
+.wallpaper .title .trend {
+    display: flex;
+}
+.wallpaper .title .trend h3 {
+    margin-right: 1rem;
+}
+.wallpaper .title .trend h4 {
+    margin: 0 0.2rem;
+    line-height: 4rem;
+}
+.wallpaper .title .trend h4 a {
+    color: #e4e4e4;
+    font-size: 14px;
+    font-weight: 100;
+    text-decoration: none;
+}
+.wallpaper .title .trend h4 a:hover {
+    color: white;
+}
+.content-image {
+    column-count: 5;
+    column-gap: 2rem;
+    padding: 2rem;
+    background-color: white;
+}
+.content-image .item {
+    width: 100%;
+    height: 100%;
+    margin-bottom: 2rem;
+}
+.content-image .item img {
+    width: 100%;
+    height: auto;
+}
+@media (max-width: 1200px) {
+    .logo div h1,
+    .logo h3 {
+        display: none;
+    }
+}
+@media (max-width: 1700px) {
+    .wallpaper .title {
+        left: 30rem;
+    }
+}
+@media (max-width: 1400px) {
+    .wallpaper .title {
+        left: 20rem;
+    }
+}
+@media (max-width: 1200px) {
+    .wallpaper .title {
+        left: 10rem;
+    }
+    .content-image {
+        column-count: 4;
+    }
+}
+@media (max-width: 1000px) {
+    .wallpaper .title {
+        left: 10rem;
+    }
+    .wallpaper .title .form1 .form-search {
+        width: 60rem !important;
+    }
+    .top .right-menu {
+        opacity: 0;
+        display: none;
+        visibility: hidden;
+        width: 0px !important;
+    }
+    .top .right-menu .brands,
+    .top .right-menu .Explore,
+    .top .right-menu .etc,
+    .top .right-menu .submit,
+    .top .right-menu .line,
+    .top .right-menu .login,
+    .top .right-menu .join {
+        opacity: 0;
+        display: none;
+        visibility: hidden;
+        width: 0px !important;
+    }
+    .content-image {
+        column-count: 3;
+    }
+}
+@media (max-width: 800px) {
+    .wallpaper .title {
+        left: 8rem;
+    }
+    .wallpaper .title .form1 .form-search {
+        width: 50rem !important;
+    }
+    .content-image {
+        column-count: 2;
+    }
+}
+@media (max-width: 600px) {
+    .wallpaper .title {
+        left: 3rem;
+    }
+    .wallpaper .title .form1 .form-search {
+        width: 40rem !important;
+    }
+    .content-image {
+        column-count: 1;
+    }
+}
+/*# sourceMappingURL=main.css.map */

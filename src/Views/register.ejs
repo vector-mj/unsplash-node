@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Join | Unsplash</title>
+    <link rel="stylesheet" href="./css/register.css">
+</head>
+<body>
+    <main>
+        <section class="left">
+            <img src="./img/9.jpg" alt="">
+            <div class="description">
+                <img src="https://unsplash.com/assets/core/logo-white-8962708214629a3e8f9fbf5b87b70c3ace41c4175cbcc267f7fbb8449ac45bdd.svg">
+                <div>
+                    <h1>Creation starts here</h1>
+                    <h3>Access 2,369,751 free, high-resolution photos you can’t find anywhere else</h3>
+                    <h2>Uploaded over 7 years ago by Rula Sibai</h2>
+                </div>
+            </div>
+        </section>
+        <section class="right">
+            <form action="/api/v1/user/" method="POST">
+                <h1>Join Unsplash</h1>
+                <h4>Already have account? <a href="/login">Login</a></h4>
+                <button class="b1">
+                     <div>
+                        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="icon">
+                            <path d="M21 12.1c0-5-4-9-9-9s-9 4-9 9c0 4.5 3.3 8.2 7.6 8.9v-6.3H8.3v-2.6h2.3v-2c0-2.2 1.4-3.5 3.4-3.5 1 0 2 .2 2 .2V9h-1c-1.1 0-1.4.7-1.4 1.4v1.7H16l-.4 2.6h-2.1V21c4.2-.7 7.5-4.4 7.5-8.9"></path>
+                          </svg>
+                        </div>
+                    Join using Facebook
+                </button>
+                <p class="or">OR</p>
+                <div class="full-name">
+                    <div class="first-name">
+                        <h2>Firstname<h2>
+                        <input type="text" name="name">
+                    </div>
+                    <div class="last-name">
+                        <h2>Lastname</h2>
+                        <input type="text" name="lastName">
+                    </div>
+                </div>
+                <div class="email">
+                    <h2>Email address</h2>
+                    <input type="text" name="email">
+                </div>
+                <div class="password">
+                    <h2>Password <span>(min .6 char)</span></h2>
+                    <input type="text" name="password">
+                </div>
+                <div class="username">
+                    <h2>Password Confrim <span>(min .6 char)</span></h2>
+                    <input type="text" name="passwordConfrim">
+                </div>
+                <button type="submit">Join</button>
+                <p class="terms">By joining, you agree to the <a href="">Terms</a> and <a href="">Privacy Policy.</a></p>
+            </form>
+        </section>
+    </main>
+</body>
+</html>
