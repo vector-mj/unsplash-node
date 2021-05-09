@@ -1,4 +1,4 @@
-// FIXME:
+// FIX
 class ApiFeatures{
     private query: any;
     private queryStr: any;
