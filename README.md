@@ -1,2 +1,2 @@
 # unsplash-node
-a website with unsplash-template &amp; nodejs
+a website with unsplash-template &amp; nodejs &amp; typescript
