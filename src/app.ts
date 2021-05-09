@@ -29,7 +29,7 @@ app.get('/',(req:Request,res:Response)=>{
     res.render(`${__dirname}/Views/index.ejs`,{data:{number:req.params.number}});
 });
 ///////////////////////////////////////////////
-app.use('/api/v1/user',userRoute);
+app.use('/user',userRoute);
 app.all('*',(req:Request,res:Response,next:Function)=>{
     next(AppError(`Can't find ${req.originalUrl} on this server!`, 404,res))
 });

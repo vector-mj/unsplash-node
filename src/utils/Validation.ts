@@ -17,7 +17,7 @@ const createUserValidator = () =>{
         })
         .withMessage('password is not Strong')
         .custom((value,{req})=>{
-            if(value!==req.body.passwordConfrim)throw new Error('password is not match #');
+            if(value!==req.body.passwordConfrim)throw new Error('password is not match with confrim password#');
             return true;
         })
     ];
@@ -26,7 +26,6 @@ const createUserValidator = () =>{
 const validate = async (req:Request,res:Response,next:any)=>{
     const errors = validationResult(req)
     if(!errors.isEmpty()){
-        next()
         return res.status(422).json({errors:errors.array()});
     }
     next();

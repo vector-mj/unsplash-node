@@ -24,6 +24,10 @@ const userSchema = new mongoose.Schema({
         type:String,
         default:'default.jpg'
     },
+    age:{
+        type:Number,
+        require:[true,"please Enter your birthday"],
+    },
     role:{
         type:String,
         enum: ['user','guide','admin'],
@@ -33,10 +37,11 @@ const userSchema = new mongoose.Schema({
         type:String,
         required:[true,'Please provide a password'],
         minlength:8,
-        select:false
+        // select:false
     },
     passwordConfrim:{
         type:String,
+        // select:false,
         required:[true,'please provide a password'],
         validate: {
             // This only works on CREATE and SAVE!!!
@@ -60,12 +65,12 @@ const userSchema = new mongoose.Schema({
     }
 });
 
-// userSchema.pre('save',async function(this:any,next){
-//     if(this.password){
-//         this.password = await bcrypt.hash(this.password,12);
-//         this.passwordConfrim = undefined;
-//         next();
-//     }
-// });
+userSchema.pre('save',async function(this:any,next){
+    if(this.password){
+        this.password = await bcrypt.hash(this.password,12);
+        this.passwordConfrim = undefined;
+        next();
+    }
+});
 const User = mongoose.model('User',userSchema);
 export {User};
