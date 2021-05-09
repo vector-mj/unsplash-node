@@ -1,9 +1,16 @@
 // import uesr model
 import { Request, Response } from 'express';
+import { nextTick } from 'node:process';
 import { User } from './../Models/userModel';
 
+// add topUsers as middelware to a new route
+const topUsers = async (req:Request,res:Response,next:Function) => {
+    req.query.limit = "5";
+    req.query.fields = "name,age,email";
+    next();
+}
+
 const userPost = async (req: Request, res: Response) => {
-    // console.log(req.secure+"  "+req.headers['x-forwarded-proto']);
     try{
         const user = await User.create(req.body);
         if(user){
@@ -20,14 +27,15 @@ const userPost = async (req: Request, res: Response) => {
     }
 
 }
+
 const getAllUser = async (req:Request,res:Response)=>{
     try{
         // (1) Clear all querys 
         let cleanQuery:any = {...req.query};
-        let whiteList = ['limit','fields','sort'];
+        let whiteList = ['limit','fields','sort','page'];
         whiteList.forEach(el => delete cleanQuery[el]);
 
-         //(2) Sort by
+        //  (2) Sort by
         let sortBy:string = req.query.sort?(req.query.sort as string).split(",").join(" "):"-accountCreatedAt";
 
         // (3) Select fields
@@ -37,7 +45,17 @@ const getAllUser = async (req:Request,res:Response)=>{
         let query:string = JSON.stringify(cleanQuery);
         let query2:object = JSON.parse(query.replace(/\b(gt|lt|gle|lte)\b/g,match=>`$${match}`));
 
-        let users = await User.find(query2).select(fi).sort(sortBy);
+        // (5) pagination
+        let page:any = req.query.page || 1;
+        let limit:any = req.query.limit || 100;
+        let skip = (page-1)*limit;
+        if(req.query.page){
+            const numUsers:number = await User.countDocuments();
+            if(skip>=numUsers)throw new Error('This page does not exist');
+        }
+        // (6) run query
+        let users = await User.find(query2).select(fi).skip(skip).limit(limit*1).sort(sortBy);
+
         if(users){
             res.status(200).json({
                 message:"successs",
