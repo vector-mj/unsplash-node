@@ -9,8 +9,12 @@ const app = require('./app');
 // DATABASE CONNECTION
 let DB:any = process.env.DB_ATLAS;
 DB = DB.replace('<PASSWORD>',process.env.DB_PASSWORD);
+DB = DB.replace('<NAME>',process.env.DB_NAME); 
+
 // OR
+
 // let DB:any = process.env.DB_LOCAL;
+// DB = DB.replace('<NAME>',process.env.DB_NAME);
 // ---------------------------------------------------------------
 mongoose.connect(DB,{
     useNewUrlParser: true,
@@ -30,4 +34,4 @@ mongoose.connect(DB,{
     });
 }).catch(err=>{
     console.log(err);
-});
+}); 

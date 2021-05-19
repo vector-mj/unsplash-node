@@ -5,8 +5,8 @@ import { Request, Response } from 'express';
 const createUserValidator = () =>{
     return [
         body('email').isEmail(),
-        body('name').isString().isLength({min:4,max:12}),
-        body('lastName').isString().isLength({min:4,max:12}),
+        body('name').isString().isLength({min:2,max:40}),
+        body('lastName').isString().isLength({min:2,max:40}),
         body('password').isString().isLength({min:4}),
         body('password').isStrongPassword({
             minLength:8,
