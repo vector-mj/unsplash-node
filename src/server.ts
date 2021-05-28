@@ -7,6 +7,7 @@ const app = require('./app');
 
 // ---------------------------------------------------------------
 // DATABASE CONNECTION
+
 let DB:any = process.env.DB_ATLAS;
 DB = DB.replace('<PASSWORD>',process.env.DB_PASSWORD);
 DB = DB.replace('<NAME>',process.env.DB_NAME); 
@@ -15,6 +16,7 @@ DB = DB.replace('<NAME>',process.env.DB_NAME);
 
 // let DB:any = process.env.DB_LOCAL;
 // DB = DB.replace('<NAME>',process.env.DB_NAME);
+
 // ---------------------------------------------------------------
 mongoose.connect(DB,{
     useNewUrlParser: true,
@@ -28,10 +30,10 @@ mongoose.connect(DB,{
     if (process.env.DEV_MODE == 'DEVELOPMENT') app.use(morgan('dev'));
     
     // RUN SERVER LISTENER
-    const port = process.env.SERVER_PORT || 5000;
+    const port = process.env.SERVER_PORT || 6000;
     app.listen(port, () => {
         console.log(`server is running on port ${port}  !`)
     });
-}).catch(err=>{
+}).catch(err=>{ 
     console.log(err);
 }); 

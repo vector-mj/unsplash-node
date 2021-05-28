@@ -92,10 +92,10 @@ userSchema.pre('save', async function (this: any, next) {
         this.passwordConfrim = undefined;
         next();
     }
-});
+}); 
 userSchema.pre(/^find/,function(this:any,next:Function){
     this.find({active:{$ne:false}});
     next();
 })
 const User = mongoose.model('User', userSchema);
-export { User };
+export { User }; 
